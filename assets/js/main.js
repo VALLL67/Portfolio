@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Привет, я Валентин",
         "Hallo, ich bin Valentin",
         "שלום אני ולנטיין",
-        "Hola, soy valentin",
+        "Hola, soy Valentin",
         "こんにちは、ヴァレンティンです",
         "Merhaba, ben Valentin",
     ];
