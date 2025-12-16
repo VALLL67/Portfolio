@@ -1,0 +1,428 @@
+/*
+ * Feuille de styles principale pour le portfolio.
+ * Les variables CSS définies dans :root permettent de modifier facilement
+ * les couleurs du thème. L’ensemble est responsive et accessible.
+ */
+
+/* Définition de la palette de couleurs (graphite / bleu acier) */
+:root {
+    --clr-primary: #2f3c4f;        /* graphite bleu foncé */
+    --clr-primary-dark: #212b3a;   /* variante plus sombre */
+    --clr-secondary: #f2f4f7;      /* fond clair neutre */
+    --clr-accent: #3b82f6;         /* bleu acier */
+    --clr-accent-hover: #2563eb;   /* accent au survol */
+    --clr-text: #1f2937;           /* texte principal */
+    --clr-white: #ffffff;
+    --clr-gray: #e5e7eb;
+    --transition: 0.3s ease;
+    --max-width: 1200px;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--clr-text);
+    background-color: var(--clr-secondary);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    color: var(--clr-primary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover,
+a:focus {
+    color: var(--clr-primary-dark);
+}
+
+/* Navigation */
+.header {
+    background-color: var(--clr-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style du logo (qui est maintenant un lien cliquable) */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.05rem;
+}
+
+.logo:hover,
+.logo:focus {
+    color: var(--clr-primary-dark);
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.2rem;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.3, 1), opacity 0.35s ease;
+    opacity: 0.85;
+    will-change: transform, opacity;
+}
+
+.logo:hover::after,
+.logo:focus::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+/* (Styles de l’ancien menu de navigation et du burger supprimés car non utilisés) */
+
+/* Mise en page principale */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: var(--clr-primary);
+}
+
+/* Section hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1.5rem;
+    min-height: calc(90vh - 80px); /* occupe presque toute la hauteur visible, moins l’en‑tête */
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+    color: var(--clr-white);
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    --hero-spot-x: 50%;
+    --hero-spot-y: 50%;
+}
+
+/* halo animé derrière le contenu du hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.18), transparent 55%),
+                radial-gradient(circle at 100% 100%, rgba(28,200,138,0.25), transparent 60%);
+    opacity: 0.8;
+    transform: translate3d(0,0,0);
+    animation: heroGradientShift 8s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(20vmin at var(--hero-spot-x) var(--hero-spot-y),
+        rgba(255,255,255,0.20),
+        rgba(255,255,255,0.06) 55%,
+        transparent 75%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    mix-blend-mode: screen;
+    z-index: 1;
+}
+
+.hero.hero-spot-active::after {
+    opacity: 0.9;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+    animation: heroFloatUp 0.9s ease-out forwards, heroGlow 4.02s ease-in-out infinite;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: heroFloatUp 0.9s ease-out 0.12s forwards;
+}
+
+.hero .btn {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.hero .btn:hover,
+.hero .btn:focus {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+
+@keyframes heroGradientShift {
+    0% {
+        transform: translate3d(-6%, -4%, 0) scale(1.05);
+        filter: blur(0px);
+    }
+    50% {
+        transform: translate3d(4%, 6%, 0) scale(1.08);
+        filter: blur(1px);
+    }
+    100% {
+        transform: translate3d(0%, -2%, 0) scale(1.02);
+        filter: blur(0px);
+    }
+}
+
+@keyframes heroFloatUp {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroGlow {
+    0%, 100% {
+        text-shadow: 0 0 0 rgba(0,0,0,0.35);
+    }
+    50% {
+        text-shadow: 0 16px 35px rgba(0,0,0,0.55);
+    }
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+/* Changement de couleur et animation au survol du bouton */
+.btn:hover,
+.btn:focus {
+    background-color: var(--clr-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Section À propos */
+.about p {
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 logos par ligne */
+    justify-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+}
+
+.skill img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+}
+
+/* Section contact */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--clr-white);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.2);
+}
+
+/* Pied de page */
+.footer {
+    background-color: var(--clr-white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--clr-gray);
+    color: var(--clr-text);
+    font-size: 0.9rem;
+}
+
+.footer a {
+    margin-left: 0.5rem;
+    color: var(--clr-primary);
+    font-weight: 500;
+}
+
+.footer a:hover,
+.footer a:focus {
+    color: var(--clr-primary-dark);
+    text-decoration: underline;
+}
+
+/* Bouton retour en haut */
+.scroll-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform var(--transition), opacity var(--transition);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: var(--clr-accent-hover);
+}
+
+/* Texte multilingue animé dans le hero */
+.multi-greeting {
+    display: inline-block;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.multi-greeting.fade {
+    opacity: 0;
+}
+
+/* Bouton de changement de thème (clair/sombre) */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    margin-left: 1rem;
+    color: var(--clr-primary);
+    transition: color var(--transition);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+    color: var(--clr-primary-dark);
+}
+
+/* Variables pour le thème sombre */
+[data-theme="dark"] {
+    --clr-primary: #93a2b7;        /* bleu acier clair */
+    --clr-primary-dark: #65748a;   /* variante médium */
+    --clr-secondary: #0f141c;      /* fond sombre neutre */
+    --clr-accent: #60a5fa;         /* accent bleu clair */
+    --clr-accent-hover: #3b82f6;   /* accent au survol */
+    --clr-text: #e5e7eb;           /* texte clair */
+    --clr-white: #0b1118;          /* panneaux */
+    --clr-gray: #1c2532;           /* séparateurs */
+}
+
+/* Effet d’apparition des sections */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* (Styles responsive de l’ancien menu burger supprimés car non utilisés) */

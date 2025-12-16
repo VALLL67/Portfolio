@@ -1,10 +1,106 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Une petite page HTML</title>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-        <h1>Hello World !</h1>
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Stoll Valentin</title>
+    <!-- Lien vers la feuille de styles principale -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Chargement différé du fichier JavaScript principal -->
+    <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+    <!-- En‑tête avec navigation principale -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Le logo reste un lien vers la page d’accueil -->
+            <a href="index.html" class="logo">Stoll Valentin</a>
+			<!-- Bouton pour basculer entre les thèmes clair/sombre -->
+            <button class="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+        </nav>
+    </header>
+    <main>
+        <!-- Section hero avec texte accrocheur -->
+        <section class="hero section-reveal">
+            <!--
+              Titre dynamique : ce texte défile entre plusieurs langues grâce au script JS.
+              aria-live="polite" informe les technologies d’assistance sans être intrusif.
+            -->
+            <h1 class="hero-title">
+                <span id="multi-greeting" class="multi-greeting" aria-live="polite">Bonjour, je m'appelle Valentin</span>
+            </h1>
+            <p class="hero-subtitle">Etudiant et apprenti en ingénierie informatique</p>
+            <a href="#a-propos" class="btn">À propos</a>
+        </section>
+        <!-- Section à propos -->
+        <section class="about section-reveal" id="a-propos">
+            <h2>À propos</h2>
+            <p>
+                <!-- A ajouter -->
+            </p>
+            <div class="skills">
+                <div class="skill">
+                    <img src="assets/img/windows.png" alt="windows">
+                    <span>Windows</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/linux.png" alt="linux">
+                    <span>Linux</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/android.png" alt="android">
+                    <span>Android</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/docker.png" alt="docker">
+                    <span>Docker</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/grafana.png" alt="grafana">
+                    <span>Grafana</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/powershell.png" alt="powershell">
+                    <span>Powershell</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/python.png" alt="python">
+                    <span>Python</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/html.png" alt="html">
+                    <span>HTML</span>
+                </div>
+                <div class="skill">
+                    <img src="assets/img/css.png" alt="css">
+                    <span>CSS</span>
+                </div>
+            </div>
+        </section>
+        <!-- Section contact -->
+        <section class="contact section-reveal" id="contact">
+            <h2>Contact</h2>
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy 2025 Stoll Valentin. Tous droits réservés.</p>
+        <a href="mentions-legales.html">Mentions légales</a>
+    </footer>
+</body>
 </html>
