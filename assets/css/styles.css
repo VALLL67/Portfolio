@@ -289,52 +289,44 @@ section h2 {
 
 /* Section contact */
 
-.contact-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  /* Couleur de fond similaire à ton site (gris très clair) */
-  background-color: #f4f6f8; 
-  font-family: system-ui, -apple-system, sans-serif;
-}
-
+/* La carte blanche centrée */
 .contact-card {
-  background: white;
-  padding: 40px;
-  border-radius: 12px; /* Arrondi comme tes blocs */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Ombre douce */
-  text-align: center;
-  max-width: 500px;
-  width: 100%;
-  border: 1px solid rgba(0,0,0,0.05);
+    background-color: var(--clr-white);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; /* Centre la carte horizontalement */
+    border: 1px solid var(--clr-gray); 
 }
 
+/* Titre spécifique à la carte */
 .contact-card h2 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #1a202c; /* Texte sombre */
-  font-weight: 700;
-  margin-bottom: 16px;
+    margin-bottom: 1rem;
+    color: var(--clr-primary); 
 }
 
+/* Paragraphe de description */
 .contact-card p {
-  color: #4a5568; /* Texte gris pour la description */
-  line-height: 1.6;
-  margin-bottom: 32px;
-  font-size: 16px;
+    color: var(--clr-text);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-.contact-footer {
-  margin-top: 24px;
-  font-size: 14px;
-  color: #718096;
+/* Le petit texte "ou écrivez à..." en bas */
+.contact-alt {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--clr-text);
+    opacity: 0.8; 
 }
 
-.email-text {
-  color: #1a202c;
-  font-weight: 600;
-  user-select: all; /* Permet de copier l'email facilement */
+.contact-alt span {
+    font-weight: 600;
+    color: var(--clr-primary);
+    user-select: all; 
 }
 
 /* Pied de page */
