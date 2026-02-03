@@ -78,20 +78,29 @@
             </div>
         </section>
         <!-- Section contact -->
-        <section class="form-group" id="contact">
-            <h2>Contact</h2>
-			<form action="https://formspree.io/f/xkozeepg" method="POST">
-				<label>
-					Votre email:
-					<input type="email" name="email">
+		<form action="https://formsubmit.co/valentin.stoll.2004@gmail.com" method="POST">
+			<input type="hidden" name="_captcha" value="true">
+			<input type="text" name="_honey" style="display:none">
+			<div style="margin-bottom: 10px;">
+				<label>Nom</label><br>
+				<input type="text" name="name" required style="width: 100%; padding: 8px;">
+			</div>
+			<div style="margin-bottom: 10px;">
+				<label>Email</label><br>
+				<input type="email" name="email" required style="width: 100%; padding: 8px;">
+			</div>
+			<div style="margin-bottom: 10px;">
+				<label>Message</label><br>
+				<textarea name="message" rows="5" required style="width: 100%; padding: 8px;"></textarea>
+			</div>
+			<div style="margin-bottom: 15px;">
+				<label style="font-size: 0.8rem;">
+					<input type="checkbox" name="_optin" required>
+					J'accepte d'être recontacté(e).
 				</label>
-				<label>
-					Votre message:
-					<textarea name="message"></textarea>
-				</label>
-				<!-- your other form fields go here -->
-				<button type="submit">Send</button>
-			</form>
+			</div>
+			<button type="submit" style="padding: 10px 20px; cursor: pointer;">Envoyer</button>
+		</form>
 			<!-- 
 			<form action="#" method="post" class="contact-form">
 				<div class="form-group">
