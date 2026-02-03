@@ -78,15 +78,15 @@
             </div>
         </section>
         <!-- Section contact -->
-        <section class="contact section-reveal" id="contact">
+        <section class="form-group" id="contact">
             <h2>Contact</h2>
 			<form action="https://formspree.io/f/xkozeepg" method="POST">
 				<label>
-					Your email:
+					Votre email:
 					<input type="email" name="email">
 				</label>
 				<label>
-					Your message:
+					Votre message:
 					<textarea name="message"></textarea>
 				</label>
 				<!-- your other form fields go here -->
@@ -106,6 +106,12 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
                 </div>
+				<div style="margin-bottom: 15px;">
+					<label style="font-size: 0.8rem; display: flex; align-items: center; gap: 8px;">
+    					<input type="checkbox" name="_optin" required>
+    					J'accepte que mes données soient utilisées pour me recontacter.
+  					</label>
+				</div>
                 <button type="submit" class="btn">Envoyer</button>
             </form>
 			-->
