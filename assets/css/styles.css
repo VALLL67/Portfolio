@@ -336,62 +336,63 @@ section h2 {
 }
 
 /* Pied de page */
+/* --- Pied de page optimisé --- */
 .footer {
-    background-color: var(--clr-white);
-    padding: 2rem 1.5rem;
+    background-color: var(--clr-white); /* S'adapte au mode sombre via ta variable */
+    padding: 3rem 1.5rem;
     text-align: center;
     border-top: 1px solid var(--clr-gray);
     color: var(--clr-text);
-    font-size: 0.9rem;
-}
-
-.footer a {
-    margin-left: 0.5rem;
-    color: var(--clr-primary);
-    font-weight: 500;
-}
-
-.footer a:hover,
-.footer a:focus {
-    color: var(--clr-primary-dark);
-    text-decoration: underline;
+    transition: background-color var(--transition), color var(--transition);
 }
 
 .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 1.5rem; /* Espace équilibré entre icônes et texte */
 }
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 1.2rem;
 }
 
 .icon-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: #252525;
-    color: white;
+    width: 42px;
+    height: 42px;
+    background-color: var(--clr-gray); /* Fond gris doux par défaut */
+    color: var(--clr-primary); /* Icône couleur graphite */
     border-radius: 50%;
     text-decoration: none;
-    font-size: 20px;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    transition: all var(--transition);
 }
 
-/* Couleurs au survol spécifiques */
+/* Effets au survol : on garde l'identité des réseaux ou ton bleu accent */
+.icon-link:hover {
+    transform: translateY(-5px);
+    color: var(--clr-white); /* L'icône devient blanche au survol */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Couleurs spécifiques au survol basées sur ton bleu accent ou les logos */
 .icon-link.linkedin:hover { background-color: #0077b5; }
 .icon-link.instagram:hover { background-color: #e4405f; }
 .icon-link.github:hover { background-color: #333; }
 .icon-link.x-twitter:hover { background-color: #000; }
 
-.icon-link:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* Ajustement du lien mentions légales pour qu'il ne soit pas collé */
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer a:not(.icon-link) {
+    font-size: 0.85rem;
+    opacity: 0.7;
 }
 
 /* Bouton retour en haut */
