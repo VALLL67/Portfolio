@@ -306,13 +306,17 @@ section h2 {
 .footer-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Espace équilibré entre icônes et texte */
+    align-items: center;   
+    justify-content: center;
+    gap: 20px;
+    width: 100%;          
 }
 
 .social-icons {
     display: flex;
-    gap: 1.2rem;
+    justify-content: center; 
+    gap: 15px;
+    width: 100%;          
 }
 
 .icon-link {
@@ -339,8 +343,7 @@ section h2 {
 /* Couleurs spécifiques au survol basées sur ton bleu accent ou les logos */
 .icon-link.linkedin:hover { background-color: #0077b5; }
 .icon-link.instagram:hover { background-color: #e4405f; }
-.icon-link.github:hover { background-color: #333; }
-.icon-link.x-twitter:hover { background-color: #000; }
+.icon-link.email:hover { background-color: var(--clr-accent); }
 
 /* Ajustement du lien mentions légales pour qu'il ne soit pas collé */
 .footer p {
