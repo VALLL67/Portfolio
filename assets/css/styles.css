@@ -357,6 +357,43 @@ section h2 {
     text-decoration: underline;
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #252525;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Couleurs au survol spécifiques */
+.icon-link.linkedin:hover { background-color: #0077b5; }
+.icon-link.instagram:hover { background-color: #e4405f; }
+.icon-link.github:hover { background-color: #333; }
+.icon-link.x-twitter:hover { background-color: #000; }
+
+.icon-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* Bouton retour en haut */
 .scroll-top {
     position: fixed;
