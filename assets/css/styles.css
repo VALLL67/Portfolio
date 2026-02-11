@@ -105,8 +105,6 @@ a:focus {
     opacity: 1;
 }
 
-/* (Styles de l’ancien menu de navigation et du burger supprimés car non utilisés) */
-
 /* Mise en page principale */
 main {
     max-width: var(--max-width);
@@ -116,6 +114,7 @@ main {
 
 section {
     margin-bottom: 4rem;
+    scroll-margin-top: 100px;
 }
 
 section h2 {
