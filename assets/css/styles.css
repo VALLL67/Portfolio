@@ -293,50 +293,7 @@ section h2 {
     margin-bottom: 0.5rem;
 }
 
-/* Section contact */
-
-/* La carte blanche centrée */
-.contact-card {
-    background-color: var(--clr-white);
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto; /* Centre la carte horizontalement */
-    border: 1px solid var(--clr-gray); 
-}
-
-/* Titre spécifique à la carte */
-.contact-card h2 {
-    margin-bottom: 1rem;
-    color: var(--clr-primary); 
-}
-
-/* Paragraphe de description */
-.contact-card p {
-    color: var(--clr-text);
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Le petit texte "ou écrivez à..." en bas */
-.contact-alt {
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-    color: var(--clr-text);
-    opacity: 0.8; 
-}
-
-.contact-alt span {
-    font-weight: 600;
-    color: var(--clr-primary);
-    user-select: all; 
-}
-
 /* Pied de page */
-/* --- Pied de page optimisé --- */
 .footer {
     background-color: var(--clr-white); /* S'adapte au mode sombre via ta variable */
     padding: 3rem 1.5rem;
