@@ -114,7 +114,7 @@ main {
 
 section {
     margin-bottom: 4rem;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 140px;
 }
 
 section h2 {
@@ -259,9 +259,16 @@ section h2 {
 }
 
 /* Section À propos */
+/* Section À propos */
+.about {
+    text-align: center; /* Centre le titre H2 et le texte à l'intérieur des paragraphes */
+}
+
 .about p {
     margin-bottom: 2rem;
-    max-width: 700px;
+    max-width: 700px;   /* Garde une largeur max pour que ce soit agréable à lire */
+    margin-left: auto;  /* Marge auto à gauche pour centrer le bloc */
+    margin-right: auto; /* Marge auto à droite pour centrer le bloc */
 }
 
 .skills {
