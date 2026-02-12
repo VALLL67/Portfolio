@@ -352,6 +352,7 @@ section h2 {
 /* Ajustement du lien mentions légales pour qu'il ne soit pas collé */
 .footer p {
     margin-bottom: 0.5rem;
+    cursor: default;
 }
 
 .footer a:not(.icon-link) {
