@@ -264,6 +264,7 @@ section h2 {
 /* Section À propos */
 .about {
     text-align: center; /* Centre le titre H2 et le texte à l'intérieur des paragraphes */
+    cursor: default;
 }
 
 .about p {
