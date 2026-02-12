@@ -185,6 +185,7 @@ section h2 {
     margin-bottom: 1rem;
     letter-spacing: 0.03em;
     animation: heroFloatUp 0.9s ease-out forwards, heroGlow 4.02s ease-in-out infinite;
+    cursor: default;
 }
 
 .hero-subtitle {
@@ -194,6 +195,7 @@ section h2 {
     opacity: 0;
     transform: translateY(14px);
     animation: heroFloatUp 0.9s ease-out 0.12s forwards;
+    cursor: default;
 }
 
 .hero .btn {
