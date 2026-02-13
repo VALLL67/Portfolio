@@ -368,6 +368,7 @@ section h2 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    border: none;
     background-color: var(--clr-accent);
     color: var(--clr-white);
     display: flex;
