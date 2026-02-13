@@ -1,7 +1,6 @@
 /*
  * Feuille de styles principale pour le portfolio.
- * Les variables CSS définies dans :root permettent de modifier facilement
- * les couleurs du thème. L’ensemble est responsive et accessible.
+ * Les variables CSS définies dans :root permettent de modifier facilement les couleurs du thème.
  */
 
 /* Définition de la palette de couleurs (graphite / bleu acier) */
@@ -68,7 +67,7 @@ a:focus {
     align-items: center;
 }
 
-/* Style du logo (qui est maintenant un lien cliquable) */
+/* Style du logo */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -142,7 +141,7 @@ section h2 {
     --hero-spot-y: 50%;
 }
 
-/* halo animé derrière le contenu du hero */
+/* Halo animé dans le hero */
 .hero::before {
     content: "";
     position: absolute;
@@ -337,19 +336,18 @@ section h2 {
     transition: all var(--transition);
 }
 
-/* Effets au survol : on garde l'identité des réseaux ou ton bleu accent */
+/* Effets au survol des boutons réseaux */
 .icon-link:hover {
     transform: translateY(-5px);
     color: var(--clr-white); /* L'icône devient blanche au survol */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Couleurs spécifiques au survol basées sur ton bleu accent ou les logos */
+/* Couleurs spécifiques au survol */
 .icon-link.linkedin:hover { background-color: #0077b5; }
 .icon-link.instagram:hover { background-color: #e4405f; }
-.icon-link.email:hover { background-color: var(--clr-accent); }
+.icon-link.email:hover { background-color: #00D9C3; }
 
-/* Ajustement du lien mentions légales pour qu'il ne soit pas collé */
 .footer p {
     margin-bottom: 0.5rem;
     cursor: default;
