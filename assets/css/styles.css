@@ -30,6 +30,7 @@ body {
     background-color: var(--clr-secondary);
     line-height: 1.6;
     scroll-behavior: smooth;
+    cursor: default;
 }
 
 img {
@@ -385,7 +386,7 @@ section h2 {
     flex-direction: column;
     gap: 1.2rem;
     position: relative; /* Indispensable pour que le point de timeline se place bien */
-    
+    cursor: default;
     /* Force toutes les cartes à avoir la même hauteur pour l'alignement */
     min-height: 230px; 
 }
