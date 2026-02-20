@@ -158,43 +158,53 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(switchGreeting, 4000);
     }
     // --- Chargement dynamique du parcours (JSON) ---
+    // --- Chargement dynamique du parcours (JSON) ---
     fetch('./data.json')
         .then(response => {
             if (!response.ok) throw new Error("Fichier JSON introuvable");
             return response.json();
         })
         .then(data => {
-            // Fonction pour générer le HTML d'une carte (Design Modernisé)
+            // Nouvelle structure HTML de la carte
             const createCardHTML = (item) => {
                 const tagsHTML = item.tags ? item.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : '';
                 return `
                     <div class="card">
                         <div class="card-header">
-                            <h4>${item.poste || item.titre}</h4>
+                            <div class="card-title-group">
+                                <h4>${item.poste || item.titre}</h4>
+                                <p class="entreprise-nom">${item.entreprise || item.ecole}</p>
+                            </div>
                             <span class="date-badge">${item.date}</span>
                         </div>
-                        <p class="entreprise-nom">${item.entreprise || item.ecole}</p>
+                        
                         <div class="description">${item.description}</div>
-                        ${tagsHTML ? `<div class="tags-container">${tagsHTML}</div>` : ''}
+                        
+                        <div class="card-footer">
+                            ${tagsHTML ? `<div class="tags-container">${tagsHTML}</div>` : ''}
+                            <div class="expand-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
                     </div>
                 `;
             };
 
-            // Remplir les expériences
             const expContainer = document.getElementById('experiences-container');
             if (expContainer && data.experiences) {
-                data.experiences.forEach(exp => {
-                    expContainer.innerHTML += createCardHTML(exp);
-                });
+                data.experiences.forEach(exp => expContainer.innerHTML += createCardHTML(exp));
             }
 
-            // Remplir les formations
             const formContainer = document.getElementById('formations-container');
             if (formContainer && data.formations) {
-                data.formations.forEach(formation => {
-                    formContainer.innerHTML += createCardHTML(formation);
-                });
+                data.formations.forEach(formation => formContainer.innerHTML += createCardHTML(formation));
             }
+
+            // --- NOUVEAU : Logique d'accordéon (clic sur les cartes) ---
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', () => {
+                    // Ajoute ou retire la classe 'is-open' au clic
+                    card.classList.toggle('is-open');
+                });
+            });
         })
         .catch(error => console.error("Erreur de chargement du JSON :", error));
 });
