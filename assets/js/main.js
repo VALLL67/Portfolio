@@ -164,16 +164,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            // Fonction pour générer le HTML d'une carte
+            // Fonction pour générer le HTML d'une carte (Design Modernisé)
             const createCardHTML = (item) => {
-                // Générer les tags s'il y en a
                 const tagsHTML = item.tags ? item.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : '';
-                
                 return `
                     <div class="card">
-                        <h4>${item.poste || item.titre}</h4>
-                        <p class="entreprise-nom">${item.entreprise || item.ecole} <span>| ${item.date}</span></p>
-                        <p class="description">${item.description}</p>
+                        <div class="card-header">
+                            <h4>${item.poste || item.titre}</h4>
+                            <span class="date-badge">${item.date}</span>
+                        </div>
+                        <p class="entreprise-nom">${item.entreprise || item.ecole}</p>
+                        <div class="description">${item.description}</div>
                         ${tagsHTML ? `<div class="tags-container">${tagsHTML}</div>` : ''}
                     </div>
                 `;
