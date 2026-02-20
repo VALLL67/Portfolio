@@ -157,4 +157,43 @@ document.addEventListener('DOMContentLoaded', () => {
         // Changer de langue toutes les 4 secondes
         setInterval(switchGreeting, 4000);
     }
+    // --- Chargement dynamique du parcours (JSON) ---
+    fetch('./data.json')
+        .then(response => {
+            if (!response.ok) throw new Error("Fichier JSON introuvable");
+            return response.json();
+        })
+        .then(data => {
+            // Fonction pour générer le HTML d'une carte
+            const createCardHTML = (item) => {
+                // Générer les tags s'il y en a
+                const tagsHTML = item.tags ? item.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : '';
+                
+                return `
+                    <div class="card">
+                        <h4>${item.poste || item.titre}</h4>
+                        <p class="entreprise-nom">${item.entreprise || item.ecole} <span>| ${item.date}</span></p>
+                        <p class="description">${item.description}</p>
+                        ${tagsHTML ? `<div class="tags-container">${tagsHTML}</div>` : ''}
+                    </div>
+                `;
+            };
+
+            // Remplir les expériences
+            const expContainer = document.getElementById('experiences-container');
+            if (expContainer && data.experiences) {
+                data.experiences.forEach(exp => {
+                    expContainer.innerHTML += createCardHTML(exp);
+                });
+            }
+
+            // Remplir les formations
+            const formContainer = document.getElementById('formations-container');
+            if (formContainer && data.formations) {
+                data.formations.forEach(formation => {
+                    formContainer.innerHTML += createCardHTML(formation);
+                });
+            }
+        })
+        .catch(error => console.error("Erreur de chargement du JSON :", error));
 });
