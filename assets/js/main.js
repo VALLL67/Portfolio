@@ -176,11 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="date-badge">${item.date}</span>
                         </div>
                         
-                        <div class="description">${item.description}</div>
-                        
-                        <div class="card-footer">
-                            <div class="tags-container">${tagsHTML}</div>
-                            <div class="expand-icon" aria-label="Dérouler"><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="tags-container">
+                            ${tagsHTML}
                         </div>
                     </div>
                 `;
@@ -195,15 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formContainer && data.formations) {
                 data.formations.forEach(formation => formContainer.insertAdjacentHTML('beforeend', createCardHTML(formation)));
             }
-
-            // --- CORRECTION : Logique d'accordéon infaillible ---
-            document.getElementById('mon-parcours').addEventListener('click', (e) => {
-                const card = e.target.closest('.card');
-                // Si on a bien cliqué sur une carte
-                if (card) {
-                    card.classList.toggle('is-open');
-                }
-            });
         })
         .catch(error => console.error("Erreur de chargement du JSON :", error));
 });
