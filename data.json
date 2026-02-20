@@ -21,19 +21,19 @@
   ],
   "formations": [
     {
-      "titre": "Mastère, Expert en Ingénierie des Systèmes d'Information (Niveau 7)",
+      "titre": "Mastère, Expert en Ingénierie des Systèmes d'Information <br> RNCP41129 (Niveau 7)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2025 - Sept. 2027",
       "tags": ["Docker", "Docker Swarm", "Sauvegarde", "Stockage"]
     },
     {
-      "titre": "Bachelor, Administrateur d'Infrastructures Sécurisées (Niveau 6)",
+      "titre": "Bachelor, Administrateur d'Infrastructures Sécurisées <br> RNCP37680 (Niveau 6)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2024 - Août 2025",
       "tags": ["Windows Server", "Proxmox", "Grafana", "Zabbix", "Docker"]
     },
     {
-      "titre": "BTS, Service Informatique aux Organisations, Option SISR (Niveau 5)",
+      "titre": "BTS, Service Informatique aux Organisations, Option SISR <br> (Niveau 5)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2022 - Août 2024",
       "tags": ["Linux", "Windows", "VMware", "Python", "HTML/CSS"]
