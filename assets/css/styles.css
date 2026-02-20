@@ -296,6 +296,107 @@ section h2 {
     margin-bottom: 0.5rem;
 }
 
+
+/* --- Section Parcours --- */
+.parcours {
+    text-align: left;
+}
+
+.parcours-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .parcours-grid {
+        grid-template-columns: 1fr 1fr; /* 2 colonnes sur grand écran */
+    }
+}
+
+.colonne-parcours h3 {
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Style des cartes */
+.card {
+    background-color: var(--clr-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--clr-accent);
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: var(--clr-text);
+}
+
+.entreprise-nom {
+    font-size: 0.9rem;
+    color: var(--clr-accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.entreprise-nom span {
+    color: var(--clr-text);
+    opacity: 0.7;
+    font-weight: normal;
+}
+
+.description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--clr-text);
+    opacity: 0.9;
+}
+
+/* Style des tags/compétences dans les cartes */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: var(--clr-gray);
+    color: var(--clr-text);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card .description ul {
+    margin-top: 5px;
+    padding-left: 20px; /* Aligne bien les puces */
+}
+
+.card .description li {
+    margin-bottom: 5px; /* Espace un peu les lignes */
+}
+
+
 /* Pied de page */
 .footer {
     background-color: var(--clr-white); /* S'adapte au mode sombre via ta variable */
