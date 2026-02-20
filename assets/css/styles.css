@@ -297,7 +297,10 @@ section h2 {
 }
 
 
-/* --- Section Parcours : Structure & Timeline --- */
+/* =========================================
+   SECTION PARCOURS (TIMELINE ÉPURÉE)
+   ========================================= */
+
 .parcours {
     text-align: left;
 }
@@ -327,26 +330,12 @@ section h2 {
         border-radius: 2px;
     }
 
-    /* Points de la timeline (Expériences - Gauche) */
+    /* 1 SEUL POINT : Uniquement sur la colonne de gauche (Expériences) */
     .colonne-parcours:nth-child(1) .card::after {
         content: '';
         position: absolute;
         top: 32px;
-        right: calc(-2rem - 10px); /* Ajustement parfait sur la ligne */
-        width: 14px; height: 14px;
-        background-color: var(--clr-accent);
-        border: 3px solid var(--clr-white);
-        border-radius: 50%;
-        box-shadow: 0 0 0 2px var(--clr-accent);
-        z-index: 2;
-    }
-
-    /* Points de la timeline (Formations - Droite) */
-    .colonne-parcours:nth-child(2) .card::after {
-        content: '';
-        position: absolute;
-        top: 32px;
-        left: calc(-2rem - 10px); /* Ajustement parfait sur la ligne */
+        right: calc(-2rem - 10px); /* Ajustement parfait sur la ligne centrale */
         width: 14px; height: 14px;
         background-color: var(--clr-accent);
         border: 3px solid var(--clr-white);
@@ -356,6 +345,7 @@ section h2 {
     }
 }
 
+/* Titres des colonnes (Expériences / Formations) */
 .colonne-parcours h3 {
     color: var(--clr-primary);
     margin-bottom: 2rem;
@@ -372,7 +362,7 @@ section h2 {
     gap: 2rem;
 }
 
-/* --- Style des Cartes (Propre et fixe) --- */
+/* --- Style des Cartes (Propre, fixe et aligné) --- */
 .card {
     background-color: var(--clr-white);
     border-radius: 12px;
@@ -383,7 +373,10 @@ section h2 {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    position: relative; /* Indispensable pour que les points de la timeline se placent bien */
+    position: relative; /* Indispensable pour que le point se place bien */
+    
+    /* Force toutes les cartes à avoir la même hauteur pour l'alignement */
+    min-height: 230px; 
 }
 
 .card:hover {
@@ -431,11 +424,12 @@ section h2 {
     white-space: nowrap;
 }
 
-/* --- Tags --- */
+/* --- Tags en bas de carte --- */
 .tags-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: auto; /* Permet de toujours coller les tags tout en bas de la carte ! */
 }
 
 .tag {
