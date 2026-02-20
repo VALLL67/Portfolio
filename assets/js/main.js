@@ -185,11 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const expContainer = document.getElementById('experiences-container');
             if (expContainer && data.experiences) {
+                // On vide le conteneur avant (sécurité pour éviter les doublons avec le cache)
+                expContainer.innerHTML = ''; 
                 data.experiences.forEach(exp => expContainer.insertAdjacentHTML('beforeend', createCardHTML(exp)));
             }
 
             const formContainer = document.getElementById('formations-container');
             if (formContainer && data.formations) {
+                formContainer.innerHTML = '';
                 data.formations.forEach(formation => formContainer.insertAdjacentHTML('beforeend', createCardHTML(formation)));
             }
         })
