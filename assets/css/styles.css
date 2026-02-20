@@ -312,31 +312,27 @@ section h2 {
 /* Affichage bureau : Ajout de la ligne centrale */
 @media (min-width: 768px) {
     .parcours-grid {
-        grid-template-columns: 1fr 1fr; /* 2 colonnes */
-        gap: 4rem; /* Espace large pour la ligne au milieu */
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem; 
     }
 
-    /* La ligne verticale centrale */
     .parcours-grid::before {
         content: '';
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
+        top: 0; bottom: 0; left: 50%;
         width: 2px;
         background-color: var(--clr-gray);
         transform: translateX(-50%);
         border-radius: 2px;
     }
 
-    /* Points sur la ligne (Colonne gauche - Expériences) */
+    /* Point Expériences (Gauche) */
     .colonne-parcours:nth-child(1) .card::after {
         content: '';
         position: absolute;
-        top: 35px; /* Aligné avec le haut de la carte */
-        right: calc(-2rem - 7px); /* Place le point au centre exact de l'espace */
-        width: 14px;
-        height: 14px;
+        top: 32px; 
+        right: calc(-2rem - 10px); /* 10px = centrage parfait sur la ligne */
+        width: 14px; height: 14px;
         background-color: var(--clr-accent);
         border: 3px solid var(--clr-white);
         border-radius: 50%;
@@ -344,14 +340,13 @@ section h2 {
         z-index: 2;
     }
 
-    /* Points sur la ligne (Colonne droite - Formations) */
+    /* Point Formations (Droite) */
     .colonne-parcours:nth-child(2) .card::after {
         content: '';
         position: absolute;
-        top: 35px;
-        left: calc(-2rem - 7px);
-        width: 14px;
-        height: 14px;
+        top: 32px;
+        left: calc(-2rem - 10px); /* 10px = centrage parfait sur la ligne */
+        width: 14px; height: 14px;
         background-color: var(--clr-accent);
         border: 3px solid var(--clr-white);
         border-radius: 50%;
@@ -360,54 +355,7 @@ section h2 {
     }
 }
 
-.colonne-parcours h3 {
-    color: var(--clr-primary);
-    margin-bottom: 2rem;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center; /* Centre les titres au-dessus des colonnes */
-}
-
-.cards-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Plus d'espace entre les cartes */
-}
-
-/* --- Style des Cartes Interactives --- */
-.card {
-    background-color: var(--clr-white);
-    border-radius: 12px;
-    padding: 1.5rem 1.8rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-    border: 1px solid var(--clr-gray);
-    position: relative;
-    cursor: pointer; /* Indique que c'est cliquable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Ligne d'accentuation en haut au survol */
-.card::before {
-    content: "";
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 4px;
-    background-color: var(--clr-accent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-.card:hover::before { opacity: 1; }
-
-/* En-tête de la carte */
+/* --- CORRECTION EN-TÊTE ET DATE --- */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -415,83 +363,29 @@ section h2 {
     gap: 15px;
 }
 
-.card-title-group h4 {
-    margin: 0 0 5px 0;
-    font-size: 1.15rem;
-    color: var(--clr-text);
-    font-weight: 700;
-}
-
-.entreprise-nom {
-    font-size: 0.9rem;
-    color: var(--clr-primary);
-    font-weight: 600;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.card-title-group {
+    flex: 1; /* Permet au titre de prendre la place sans pousser la date */
 }
 
 .date-badge {
+    flex-shrink: 0; /* Empêche le badge de se faire écraser par les titres longs */
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--clr-accent);
     background-color: rgba(59, 130, 246, 0.1);
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     white-space: nowrap;
 }
 
-/* --- L'Accordéon (Descriptions masquées) --- */
-.description {
-    max-height: 0; /* Caché par défaut */
-    opacity: 0;
-    overflow: hidden;
-    margin: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
-}
-
-/* Quand la carte est ouverte (au clic) */
-.card.is-open .description {
-    max-height: 600px; /* S'agrandit pour montrer le texte */
-    opacity: 1;
-    margin-top: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Style des listes dans la description */
-.card .description ul {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.card .description li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: var(--clr-text);
-    opacity: 0.85;
-    line-height: 1.5;
-}
-
-.card .description li::before {
-    content: "▹"; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--clr-accent);
-    font-weight: bold;
-}
-
-/* --- Pied de carte (Tags et Flèche) --- */
+/* --- CORRECTION DE L'ICÔNE DÉROULANTE --- */
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1.2rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--clr-gray); /* Petite ligne de séparation */
+    border-top: 1px solid var(--clr-gray);
 }
 
 .tags-container {
@@ -501,27 +395,42 @@ section h2 {
     padding-right: 15px;
 }
 
-.tag {
-    background-color: var(--clr-secondary);
-    color: var(--clr-primary);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border: 1px solid var(--clr-gray);
-}
-
 .expand-icon {
     color: var(--clr-accent);
     font-size: 1rem;
-    transition: transform 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--clr-secondary);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-/* On tourne la flèche quand c'est ouvert */
+/* Animation de la flèche quand on clique */
 .card.is-open .expand-icon {
     transform: rotate(180deg);
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
 }
 
+/* --- OPTIMISATION DE LA DESCRIPTION (Accordéon fluide) --- */
+.description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin 0.3s ease-out;
+}
+
+.card.is-open .description {
+    max-height: 500px; /* Assez grand pour afficher le texte */
+    opacity: 1;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
 
 /* Pied de page */
 .footer {
