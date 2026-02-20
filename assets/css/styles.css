@@ -297,7 +297,7 @@ section h2 {
 }
 
 
-/* --- Section Parcours --- */
+/* --- Section Parcours : Layout Timeline --- */
 .parcours {
     text-align: left;
 }
@@ -306,109 +306,163 @@ section h2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    position: relative;
 }
 
+/* Affichage bureau : Ajout de la ligne centrale */
 @media (min-width: 768px) {
     .parcours-grid {
-        grid-template-columns: 1fr 1fr; /* 2 colonnes sur grand écran */
+        grid-template-columns: 1fr 1fr; /* 2 colonnes */
+        gap: 4rem; /* Espace large pour la ligne au milieu */
+    }
+
+    /* La ligne verticale centrale */
+    .parcours-grid::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background-color: var(--clr-gray);
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    /* Points sur la ligne (Colonne gauche - Expériences) */
+    .colonne-parcours:nth-child(1) .card::after {
+        content: '';
+        position: absolute;
+        top: 35px; /* Aligné avec le haut de la carte */
+        right: calc(-2rem - 7px); /* Place le point au centre exact de l'espace */
+        width: 14px;
+        height: 14px;
+        background-color: var(--clr-accent);
+        border: 3px solid var(--clr-white);
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px var(--clr-accent);
+        z-index: 2;
+    }
+
+    /* Points sur la ligne (Colonne droite - Formations) */
+    .colonne-parcours:nth-child(2) .card::after {
+        content: '';
+        position: absolute;
+        top: 35px;
+        left: calc(-2rem - 7px);
+        width: 14px;
+        height: 14px;
+        background-color: var(--clr-accent);
+        border: 3px solid var(--clr-white);
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px var(--clr-accent);
+        z-index: 2;
     }
 }
 
 .colonne-parcours h3 {
     color: var(--clr-primary);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: center; /* Centre les titres au-dessus des colonnes */
 }
 
 .cards-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem; /* Plus d'espace entre les cartes */
 }
 
-/* --- Style des Cartes Modernisées --- */
+/* --- Style des Cartes Interactives --- */
 .card {
     background-color: var(--clr-white);
-    border-radius: 12px; /* Coins un peu plus arrondis */
-    padding: 1.8rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Ombre beaucoup plus douce */
-    border: 1px solid var(--clr-gray); /* Bordure discrète */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--clr-gray);
     position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    cursor: pointer; /* Indique que c'est cliquable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ligne bleue d'accentuation en haut au survol */
+/* Ligne d'accentuation en haut au survol */
 .card::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: -1px; left: -1px; right: -1px;
     height: 4px;
     background-color: var(--clr-accent);
     opacity: 0;
     transition: opacity 0.3s ease;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
+.card:hover::before { opacity: 1; }
 
-.card:hover::before {
-    opacity: 1;
-}
-
-/* En-tête : Titre + Badge de Date */
+/* En-tête de la carte */
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 15px;
-    margin-bottom: 0.5rem;
 }
 
-.card h4 {
-    margin: 0;
+.card-title-group h4 {
+    margin: 0 0 5px 0;
     font-size: 1.15rem;
     color: var(--clr-text);
     font-weight: 700;
-    line-height: 1.4;
 }
 
-/* Badge de date dynamique */
-.date-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--clr-accent);
-    background-color: rgba(59, 130, 246, 0.1); /* Bleu très clair transparent */
-    padding: 5px 12px;
-    border-radius: 20px;
-    white-space: nowrap; /* Empêche la date de passer sur 2 lignes */
-}
-
-/* Nom de l'entreprise / école */
 .entreprise-nom {
     font-size: 0.9rem;
     color: var(--clr-primary);
     font-weight: 600;
-    margin: 0 0 1.2rem 0;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-/* --- Amélioration des listes (Descriptions) --- */
+.date-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* --- L'Accordéon (Descriptions masquées) --- */
+.description {
+    max-height: 0; /* Caché par défaut */
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+}
+
+/* Quand la carte est ouverte (au clic) */
+.card.is-open .description {
+    max-height: 600px; /* S'agrandit pour montrer le texte */
+    opacity: 1;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Style des listes dans la description */
 .card .description ul {
-    margin: 0 0 1.5rem 0;
+    margin: 0;
     padding-left: 0;
-    list-style: none; /* On supprime les gros points noirs par défaut */
+    list-style: none;
 }
 
 .card .description li {
@@ -418,10 +472,9 @@ section h2 {
     font-size: 0.95rem;
     color: var(--clr-text);
     opacity: 0.85;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* Puces personnalisées (petite flèche bleue) */
 .card .description li::before {
     content: "▹"; 
     position: absolute;
@@ -429,31 +482,44 @@ section h2 {
     top: 0;
     color: var(--clr-accent);
     font-weight: bold;
-    font-size: 1.1rem;
 }
 
-/* --- Tags repensés --- */
+/* --- Pied de carte (Tags et Flèche) --- */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--clr-gray); /* Petite ligne de séparation */
+}
+
 .tags-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto; /* Pousse les tags tout en bas de la carte */
+    padding-right: 15px;
 }
 
 .tag {
     background-color: var(--clr-secondary);
     color: var(--clr-primary);
-    padding: 6px 12px;
-    border-radius: 6px; /* Format bouton légèrement carré */
-    font-size: 0.8rem;
-    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
     border: 1px solid var(--clr-gray);
-    transition: all 0.2s ease;
 }
 
-.card:hover .tag {
-    border-color: rgba(59, 130, 246, 0.3);
-    background-color: rgba(59, 130, 246, 0.05);
+.expand-icon {
+    color: var(--clr-accent);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* On tourne la flèche quand c'est ouvert */
+.card.is-open .expand-icon {
+    transform: rotate(180deg);
 }
 
 
