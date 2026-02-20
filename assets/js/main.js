@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(switchGreeting, 4000);
     }
     // --- Chargement dynamique du parcours (JSON) ---
+    // --- Chargement dynamique du parcours (JSON) ---
     fetch('./data.json')
         .then(response => {
             if (!response.ok) throw new Error("Fichier JSON introuvable");
@@ -185,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const expContainer = document.getElementById('experiences-container');
             if (expContainer && data.experiences) {
-                // On vide le conteneur avant (sécurité pour éviter les doublons avec le cache)
                 expContainer.innerHTML = ''; 
                 data.experiences.forEach(exp => expContainer.insertAdjacentHTML('beforeend', createCardHTML(exp)));
             }
@@ -195,6 +195,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 formContainer.innerHTML = '';
                 data.formations.forEach(formation => formContainer.insertAdjacentHTML('beforeend', createCardHTML(formation)));
             }
+
+            // --- NOUVEAU : Synchronisation du survol (Timeline interactive) ---
+            // On attend que le DOM soit mis à jour avec les nouvelles cartes
+            setTimeout(() => {
+                const expCards = document.querySelectorAll('#experiences-container .card');
+                const formCards = document.querySelectorAll('#formations-container .card');
+
+                // Pour chaque carte de formation...
+                formCards.forEach((formCard, index) => {
+                    // Si une carte expérience correspondante existe au même index
+                    if (expCards[index]) {
+                        // Quand on entre avec la souris sur la formation
+                        formCard.addEventListener('mouseenter', () => {
+                            // On active le point sur l'expérience correspondante
+                            expCards[index].classList.add('dot-active');
+                        });
+
+                        // Quand on sort avec la souris
+                        formCard.addEventListener('mouseleave', () => {
+                            // On désactive le point
+                            expCards[index].classList.remove('dot-active');
+                        });
+                    }
+                });
+            }, 100); // Petit délai de sécurité pour s'assurer que le HTML est injecté
         })
         .catch(error => console.error("Erreur de chargement du JSON :", error));
 });
