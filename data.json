@@ -4,21 +4,18 @@
       "poste": "Apprenti en Ingénierie des Systèmes d'Information",
       "entreprise": "SEW Usocome",
       "date": "Sept. 2025 - Sept. 2027",
-      "description": "<ul><li>Conception de script Powershell.</li><li>Industrialisation des processus.</li></ul>",
       "tags": ["PowerShell", "Automatisation", "Industrialisation"]
     },
     {
       "poste": "Apprenti Administrateur d'Infrastructures Sécurisées",
       "entreprise": "SEW Usocome",
       "date": "Sept. 2024 - Août 2025",
-      "description": "<ul><li>Gestion de projet IT (planification, coordination...).</li><li>Etude de modernisation de script Legacy (Batch).</li></ul>",
       "tags": ["Gestion de projet", "Batch", "Migration"]
     },
     {
       "poste": "Apprenti Technicien Informatique Industrielle",
       "entreprise": "SEW Usocome",
       "date": "Sept. 2022 - Août 2024",
-      "description": "<ul><li>Support informatique Niveau 1 / Niveau 2.</li><li>Gestion du parc informatique sur plusieurs sites.</li><li>Étude et mise en place d'appareils mobiles Android.</li></ul>",
       "tags": ["Support IT", "Android", "Gestion de parc"]
     }
   ],
@@ -27,21 +24,18 @@
       "titre": "Mastère, Expert en ingénierie des SI (Niveau 7)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2025 - Sept. 2027",
-      "description": "<ul><li>Docker avancé & Orchestration Docker Swarm.</li><li>Protection des données & Stratégies de sauvegarde : Maîtrise de la règle 3-2-1-1-0, dimensionnement des infrastructures de stockage.</li></ul>",
       "tags": ["Docker", "Docker Swarm", "Sauvegarde", "Stockage"]
     },
     {
       "titre": "Bachelor, Administrateur d'Infrastructures Sécurisées (Niveau 6)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2024 - Août 2025",
-      "description": "<ul><li>Gestion de projet informatique.</li><li>Architecture d'Infrastructure (Système / Stockage).</li><li>Déploiement et Gestion des conteneurs (Docker).</li><li>Installation d'outils de Monitoring (Zabbix, Grafana).</li><li>Hardening Active Directory Windows Server.</li><li>Déploiement de Cluster Proxmox.</li></ul>",
       "tags": ["Windows Server", "Proxmox", "Grafana", "Zabbix", "Docker"]
     },
     {
       "titre": "BTS SIO Option SISR (Niveau 5)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2022 - Août 2024",
-      "description": "<ul><li>Virtualisation (VMware / Proxmox / VirtualBox).</li><li>Installation serveurs (Linux / Windows Server).</li><li>Travail collaboratif sur différents projets.</li><li>Base des langages web (HTML / CSS / PHP).</li><li>Langages de Scripting (PowerShell, Python).</li></ul>",
       "tags": ["Linux", "Windows", "VMware", "Python", "HTML/CSS"]
     }
   ]
