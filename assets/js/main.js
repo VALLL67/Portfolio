@@ -158,14 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(switchGreeting, 4000);
     }
     // --- Chargement dynamique du parcours (JSON) ---
-    // --- Chargement dynamique du parcours (JSON) ---
     fetch('./data.json')
         .then(response => {
             if (!response.ok) throw new Error("Fichier JSON introuvable");
             return response.json();
         })
         .then(data => {
-            // Nouvelle structure HTML de la carte
             const createCardHTML = (item) => {
                 const tagsHTML = item.tags ? item.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : '';
                 return `
@@ -181,8 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="description">${item.description}</div>
                         
                         <div class="card-footer">
-                            ${tagsHTML ? `<div class="tags-container">${tagsHTML}</div>` : ''}
-                            <div class="expand-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                            <div class="tags-container">${tagsHTML}</div>
+                            <div class="expand-icon" aria-label="Dérouler"><i class="fa-solid fa-chevron-down"></i></div>
                         </div>
                     </div>
                 `;
@@ -190,20 +188,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const expContainer = document.getElementById('experiences-container');
             if (expContainer && data.experiences) {
-                data.experiences.forEach(exp => expContainer.innerHTML += createCardHTML(exp));
+                data.experiences.forEach(exp => expContainer.insertAdjacentHTML('beforeend', createCardHTML(exp)));
             }
 
             const formContainer = document.getElementById('formations-container');
             if (formContainer && data.formations) {
-                data.formations.forEach(formation => formContainer.innerHTML += createCardHTML(formation));
+                data.formations.forEach(formation => formContainer.insertAdjacentHTML('beforeend', createCardHTML(formation)));
             }
 
-            // --- NOUVEAU : Logique d'accordéon (clic sur les cartes) ---
-            document.querySelectorAll('.card').forEach(card => {
-                card.addEventListener('click', () => {
-                    // Ajoute ou retire la classe 'is-open' au clic
+            // --- CORRECTION : Logique d'accordéon infaillible ---
+            document.getElementById('mon-parcours').addEventListener('click', (e) => {
+                const card = e.target.closest('.card');
+                // Si on a bien cliqué sur une carte
+                if (card) {
                     card.classList.toggle('is-open');
-                });
+                }
             });
         })
         .catch(error => console.error("Erreur de chargement du JSON :", error));
