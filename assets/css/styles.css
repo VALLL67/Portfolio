@@ -329,71 +329,131 @@ section h2 {
     gap: 1.5rem;
 }
 
-/* Style des cartes */
+/* --- Style des Cartes Modernisées --- */
 .card {
     background-color: var(--clr-white);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid var(--clr-accent);
-    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+    border-radius: 12px; /* Coins un peu plus arrondis */
+    padding: 1.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Ombre beaucoup plus douce */
+    border: 1px solid var(--clr-gray); /* Bordure discrète */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ligne bleue d'accentuation en haut au survol */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--clr-accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: transparent;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* En-tête : Titre + Badge de Date */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 0.5rem;
 }
 
 .card h4 {
-    margin: 0 0 0.5rem 0;
+    margin: 0;
     font-size: 1.15rem;
     color: var(--clr-text);
+    font-weight: 700;
+    line-height: 1.4;
 }
 
+/* Badge de date dynamique */
+.date-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+    background-color: rgba(59, 130, 246, 0.1); /* Bleu très clair transparent */
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap; /* Empêche la date de passer sur 2 lignes */
+}
+
+/* Nom de l'entreprise / école */
 .entreprise-nom {
     font-size: 0.9rem;
-    color: var(--clr-accent);
+    color: var(--clr-primary);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin: 0 0 1.2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.entreprise-nom span {
-    color: var(--clr-text);
-    opacity: 0.7;
-    font-weight: normal;
+/* --- Amélioration des listes (Descriptions) --- */
+.card .description ul {
+    margin: 0 0 1.5rem 0;
+    padding-left: 0;
+    list-style: none; /* On supprime les gros points noirs par défaut */
 }
 
-.description {
+.card .description li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
     font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
     color: var(--clr-text);
-    opacity: 0.9;
+    opacity: 0.85;
+    line-height: 1.6;
 }
 
-/* Style des tags/compétences dans les cartes */
+/* Puces personnalisées (petite flèche bleue) */
+.card .description li::before {
+    content: "▹"; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--clr-accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- Tags repensés --- */
 .tags-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: auto; /* Pousse les tags tout en bas de la carte */
 }
 
 .tag {
-    background-color: var(--clr-gray);
-    color: var(--clr-text);
-    padding: 4px 10px;
-    border-radius: 20px;
+    background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+    padding: 6px 12px;
+    border-radius: 6px; /* Format bouton légèrement carré */
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
+    border: 1px solid var(--clr-gray);
+    transition: all 0.2s ease;
 }
 
-.card .description ul {
-    margin-top: 5px;
-    padding-left: 20px; /* Aligne bien les puces */
-}
-
-.card .description li {
-    margin-bottom: 5px; /* Espace un peu les lignes */
+.card:hover .tag {
+    border-color: rgba(59, 130, 246, 0.3);
+    background-color: rgba(59, 130, 246, 0.05);
 }
 
 
