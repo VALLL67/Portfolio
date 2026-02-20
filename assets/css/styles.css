@@ -297,7 +297,7 @@ section h2 {
 }
 
 
-/* --- Section Parcours : Layout Timeline --- */
+/* --- Section Parcours : Structure de base --- */
 .parcours {
     text-align: left;
 }
@@ -306,56 +306,48 @@ section h2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    position: relative;
 }
 
-/* Affichage bureau : Ajout de la ligne centrale */
 @media (min-width: 768px) {
     .parcours-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem; 
-    }
-
-    .parcours-grid::before {
-        content: '';
-        position: absolute;
-        top: 0; bottom: 0; left: 50%;
-        width: 2px;
-        background-color: var(--clr-gray);
-        transform: translateX(-50%);
-        border-radius: 2px;
-    }
-
-    /* Point Expériences (Gauche) */
-    .colonne-parcours:nth-child(1) .card::after {
-        content: '';
-        position: absolute;
-        top: 32px; 
-        right: calc(-2rem - 10px); /* 10px = centrage parfait sur la ligne */
-        width: 14px; height: 14px;
-        background-color: var(--clr-accent);
-        border: 3px solid var(--clr-white);
-        border-radius: 50%;
-        box-shadow: 0 0 0 2px var(--clr-accent);
-        z-index: 2;
-    }
-
-    /* Point Formations (Droite) */
-    .colonne-parcours:nth-child(2) .card::after {
-        content: '';
-        position: absolute;
-        top: 32px;
-        left: calc(-2rem - 10px); /* 10px = centrage parfait sur la ligne */
-        width: 14px; height: 14px;
-        background-color: var(--clr-accent);
-        border: 3px solid var(--clr-white);
-        border-radius: 50%;
-        box-shadow: 0 0 0 2px var(--clr-accent);
-        z-index: 2;
+        grid-template-columns: 1fr 1fr; /* 2 colonnes simples, pas de timeline */
     }
 }
 
-/* --- CORRECTION EN-TÊTE ET DATE --- */
+.colonne-parcours h3 {
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espace entre les cartes */
+}
+
+/* --- Style des Cartes (Propre et fixe) --- */
+.card {
+    background-color: var(--clr-white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--clr-gray);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Sépare l'en-tête des tags */
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* En-tête : Titre + Sous-titre + Date */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -363,12 +355,24 @@ section h2 {
     gap: 15px;
 }
 
-.card-title-group {
-    flex: 1; /* Permet au titre de prendre la place sans pousser la date */
+.card-title-group h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.15rem;
+    color: var(--clr-text);
+    font-weight: 700;
+}
+
+.entreprise-nom {
+    font-size: 0.9rem;
+    color: var(--clr-primary);
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .date-badge {
-    flex-shrink: 0; /* Empêche le badge de se faire écraser par les titres longs */
+    flex-shrink: 0;
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--clr-accent);
@@ -378,58 +382,21 @@ section h2 {
     white-space: nowrap;
 }
 
-/* --- CORRECTION DE L'ICÔNE DÉROULANTE --- */
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1.2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--clr-gray);
-}
-
+/* --- Tags --- */
 .tags-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    padding-right: 15px;
 }
 
-.expand-icon {
-    color: var(--clr-accent);
-    font-size: 1rem;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+.tag {
     background-color: var(--clr-secondary);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-/* Animation de la flèche quand on clique */
-.card.is-open .expand-icon {
-    transform: rotate(180deg);
-    background-color: var(--clr-accent);
-    color: var(--clr-white);
-}
-
-/* --- OPTIMISATION DE LA DESCRIPTION (Accordéon fluide) --- */
-.description {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    margin: 0;
-    transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin 0.3s ease-out;
-}
-
-.card.is-open .description {
-    max-height: 500px; /* Assez grand pour afficher le texte */
-    opacity: 1;
-    margin-top: 1.2rem;
-    margin-bottom: 0.5rem;
+    color: var(--clr-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--clr-gray);
 }
 
 /* Pied de page */
