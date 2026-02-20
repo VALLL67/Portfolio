@@ -345,7 +345,9 @@ section h2 {
         transition: all 0.3s ease; /* Permet l'animation fluide au survol */
     }
 
-    /* --- NOUVEAU : Animation du point au survol de la carte Formation --- */
+    /* --- Animation du point au survol --- */
+    /* S'active si on survole l'expérience directement (:hover) OU la formation en face (.dot-active) */
+    .colonne-parcours:nth-child(1) .card:hover::after,
     .colonne-parcours:nth-child(1) .card.dot-active::after {
         transform: scale(1.3); /* Fait grossir le point */
         background-color: var(--clr-white);
@@ -386,11 +388,6 @@ section h2 {
     
     /* Force toutes les cartes à avoir la même hauteur pour l'alignement */
     min-height: 230px; 
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* En-tête : Titre + Sous-titre + Date */
