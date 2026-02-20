@@ -21,7 +21,7 @@
   ],
   "formations": [
     {
-      "titre": "Mastère, Expert en ingénierie des SI (Niveau 7)",
+      "titre": "Mastère, Expert en Ingénierie des Systèmes d'Information (Niveau 7)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2025 - Sept. 2027",
       "tags": ["Docker", "Docker Swarm", "Sauvegarde", "Stockage"]
@@ -33,7 +33,7 @@
       "tags": ["Windows Server", "Proxmox", "Grafana", "Zabbix", "Docker"]
     },
     {
-      "titre": "BTS SIO Option SISR (Niveau 5)",
+      "titre": "BTS, Service Informatique aux Organisations, Option SISR (Niveau 5)",
       "ecole": "IRIS - Ecole supérieure d'informatique",
       "date": "Sept. 2022 - Août 2024",
       "tags": ["Linux", "Windows", "VMware", "Python", "HTML/CSS"]
