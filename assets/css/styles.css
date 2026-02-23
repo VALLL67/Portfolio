@@ -186,6 +186,11 @@ section h2 {
     letter-spacing: 0.03em;
     animation: heroFloatUp 0.9s ease-out forwards, heroGlow 4.02s ease-in-out infinite;
     cursor: default;
+    /* --- NOUVEAU : Réserver l'espace pour éviter les sauts --- */
+    min-height: 3.5em; /* Prévoit assez d'espace pour 2 à 3 lignes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-subtitle {
