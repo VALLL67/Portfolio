@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valentin Stoll | Portfolio</title>
+  <meta name="description" content="Portfolio de Valentin Stoll, apprenti en ingénierie des systèmes d'information en alternance chez SEW USOCOME et à l'IRIS.">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">Valentin Stoll</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-home" href="#top">Accueil</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Changer de thème">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- ============ PRÉSENTATION ============ -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <h1 class="hero-name">Valentin<br>Stoll</h1>
+        <p class="hero-role">Apprenti en ingénierie des systèmes d'information.</p>
+        <p class="hero-text">
+          Passionné par les nouvelles technologies, je suis actuellement étudiant à l'école IRIS Mediaschool en apprentissage en ingénierie informatique dans la société SEW Usocome depuis septembre 2022. Mon cursus BAC+5 se terminera en septembre 2027. En dehors de l'informatique, je suis passionné d'automobile et d'horlogerie, et je consacre mon temps libre à la musculation et la course à pied, des disciplines qui m'apprennent la persévérance et le dépassement de soi !
+        </p>
+        <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>En alternance chez SEW USOCOME jusqu'en 2027</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Me contacter</a>
+          <a class="btn btn-ghost" href="#parcours">Voir mon parcours</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARCOURS ============ -->
+    <section class="section" id="parcours">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Parcours</h2>
+          <p class="section-intro">Depuis 2022, chaque étape associe une formation à l'IRIS et un poste chez SEW USOCOME. Les deux colonnes se lisent en parallèle.</p>
+        </div>
+
+        <div class="tracks">
+          <div class="track-head" aria-hidden="true">
+            <span></span>
+            <span><strong>École</strong></span>
+            <span><strong>Entreprise</strong></span>
+          </div>
+
+          <div class="tracks-body">
+            <!-- Période 3 -->
+            <article class="period is-current">
+              <div class="period-time">
+                <span class="period-years">2025</span>
+                <span class="period-range">sept. 2025 – sept. 2027</span>
+                <span class="period-status">En cours</span>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">École : </span>IRIS <span class="cell-place">École supérieure d'informatique Strasbourg</span></p>
+                <h3>Mastère Expert en ingénierie des systèmes d'information</h3>
+                <p class="cell-meta">Titre professionnel niveau 7 (RNCP41129) <br>Equivalent niveau 7 CEC</p>
+                <ul>
+                  <li>Docker avancé et orchestration Docker Swarm</li>
+                  <li>Protection des données et stratégies de sauvegarde</li>
+                  <li>Automatisation de workflows avec n8n</li>
+                  <li>Sauvegarde et restauration de VM avec Veeam</li>
+                  <li>Provisionnement d'infrastructure avec Terraform sur OpenStack et AWS (IaC)</li>
+                </ul>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">Entreprise : </span>SEW USOCOME <span class="cell-place">Haguenau / Mommenheim</span></p>
+                <h3>Apprenti en ingénierie des systèmes d'information</h3>
+                <ul>
+                  <li>Conception de scripts PowerShell</li>
+                  <li>Industrialisation des processus</li>
+                  <li>Monitoring IoT et dashboards (Grafana, LoRaWAN)</li>
+                </ul>
+                <button class="more" type="button" aria-expanded="false" aria-controls="detail-3">
+                  <span class="more-label">Lire le détail</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="more-body" id="detail-3">
+                  <div>
+                    <p>Une de mes missions porte sur l'industrialisation et la modernisation des opérations informatiques industrielles. Je développe, déploie et maintiens des scripts PowerShell qui automatisent l'administration et l'installation des postes utilisateurs en production, afin de limiter les erreurs manuelles, fiabiliser les déploiements et rendre le processus d'installation plus scalable.</p>
+                    <p>Un second projet consiste à superviser les salles serveurs grâce à des capteurs IoT connectés en LoRaWAN, dont les données alimentent des tableaux de bord Grafana.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Période 2 -->
+            <article class="period">
+              <div class="period-time">
+                <span class="period-years">2024</span>
+                <span class="period-range">sept. 2024 – août 2025</span>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">École : </span>IRIS <span class="cell-place">École supérieure d'informatique Strasbourg</span></p>
+                <h3>Bachelor Administrateur d'infrastructures sécurisées</h3>
+                <p class="cell-meta">Titre professionnel niveau 6 (RNCP37680) | Admis <br>Equivalent niveau 6 CEC</p>
+                <ul>
+                  <li>Gestion de projet informatique</li>
+                  <li>Architecture d'infrastructure (système et stockage)</li>
+                  <li>Déploiement et gestion de conteneurs Docker</li>
+                  <li>Monitoring avec Zabbix et Grafana</li>
+                  <li>Hardening Active Directory sous Windows Server</li>
+                  <li>Virtualisation avancée avec Proxmox (clustering, HA, migration à chaud)</li>
+                </ul>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">Entreprise : </span>SEW USOCOME <span class="cell-place">Haguenau / Mommenheim</span></p>
+                <h3>Apprenti administrateur d'infrastructures sécurisées</h3>
+                <ul>
+                  <li>Gestion de projet IT (planification, coordination)</li>
+                  <li>Étude de modernisation des scripts legacy (Batch)</li>
+                  <li>Migration Windows 11 du parc PC en production</li>
+                </ul>
+                <button class="more" type="button" aria-expanded="false" aria-controls="detail-2">
+                  <span class="more-label">Lire le détail</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="more-body" id="detail-2">
+                  <div>
+                    <p>Gestion de projets en informatique industrielle. J'ai mené à bien un chantier de modernisation : la transition des scripts legacy (fichiers Batch) vers PowerShell. Cette refonte visait à éliminer la dette technique, pérenniser les opérations et s'aligner sur les exigences actuelles de cybersécurité.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Période 1 -->
+            <article class="period">
+              <div class="period-time">
+                <span class="period-years">2022</span>
+                <span class="period-range">sept. 2022 – août 2024</span>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">École : </span>IRIS <span class="cell-place">École supérieure d'informatique Strasbourg</span></p>
+                <h3>BTS Services informatiques aux organisations, option SISR</h3>
+                <p class="cell-meta">Titre professionnel niveau 5 (RNCP35340) | Admis <br>Equivalent niveau 5 CEC</p>
+                <ul>
+                  <li>Virtualisation (VMware, Proxmox, VirtualBox)</li>
+                  <li>Installation de serveurs Linux et Windows Server</li>
+                  <li>Travail collaboratif sur différents projets</li>
+                  <li>Bases des langages web (HTML, CSS, PHP)</li>
+                  <li>Langages de scripting (PowerShell, Python)</li>
+                </ul>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">Entreprise : </span>SEW USOCOME <span class="cell-place">Haguenau / Mommenheim</span></p>
+                <h3>Apprenti technicien informatique industrielle</h3>
+                <ul>
+                  <li>Support informatique niveau 1 et 2</li>
+                  <li>Gestion du parc informatique sur plusieurs sites</li>
+                  <li>Étude et mise en place d'appareils mobiles Android</li>
+                </ul>
+                <button class="more" type="button" aria-expanded="false" aria-controls="detail-1">
+                  <span class="more-label">Lire le détail</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="more-body" id="detail-1">
+                  <div>
+                    <p>Administration et maintien en condition opérationnelle (MCO) du matériel informatique réparti sur plusieurs sites de production, avec le support N1/N2 et la gestion de parc.</p>
+                    <p>J'ai également été chef de projet pour la modernisation des outils logistiques : remplacement des anciens terminaux Windows Embedded par une flotte de 30 appareils Android, déployés, configurés et intégrés au MDM SOTI MobiControl en tenant compte des contraintes du terrain.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Avant l'alternance : uniquement l'école -->
+            <article class="period">
+              <div class="period-time">
+                <span class="period-years">2019</span>
+                <span class="period-range">sept. 2019 – juil. 2022</span>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">École : </span>Lycée André Maurois <span class="cell-place">Bischwiller</span></p>
+                <h3>Baccalauréat général</h3>
+                <p class="cell-meta">Spécialités maths et SES | Admis Mention bien <br>Equivalent niveau 4 CEC</p>
+              </div>
+
+              <div class="cell cell-empty" aria-hidden="true"></div>
+            </article>
+
+            <article class="period">
+              <div class="period-time">
+                <span class="period-years">2015</span>
+                <span class="period-range">sept. 2015 – juil. 2019</span>
+              </div>
+
+              <div class="cell">
+                <p class="cell-org"><span class="cell-kind">École : </span>Collège Simone Veil <span class="cell-place">Herrlisheim</span></p>
+                <h3>Diplôme national du brevet</h3>
+                <p class="cell-meta">Admis Mention bien</p>
+              </div>
+
+              <div class="cell cell-empty" aria-hidden="true"></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="section" id="competences">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Compétences</h2>
+          <p class="section-intro">Les outils et pratiques que j'utilise en entreprise et en formation.</p>
+        </div>
+
+        <!-- Chaque rangée défile ; data-direction = left/right, data-speed = vitesse en pixels par seconde -->
+        <div class="marquee" data-marquee>
+          <div class="marquee-row" data-direction="left" data-speed="38">
+            <div class="marquee-track">
+              <ul class="marquee-group">
+                <!-- Automatisation et scripting -->
+                <li class="badge cat-auto"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 11 2-2-2-2"/> <path d="M11 13h4"/> <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg></span>PowerShell</li>
+                <li class="badge cat-auto"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12.5 8 15l2 2.5"/> <path d="m14 12.5 2 2.5-2 2.5"/> <path d="M14 2v4a2 2 0 0 0 2 2h4"/> <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/></svg></span>Python</li>
+                <li class="badge cat-auto"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/> <path d="M7 11v4a2 2 0 0 0 2 2h4"/> <rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>n8n</li>
+                <li class="badge cat-auto"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/> <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/> <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>Terraform</li>
+                <!-- Supervision -->
+                <li class="badge cat-sup"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/> <path d="m19 9-5 5-4-4-3 3"/></svg></span>Grafana</li>
+                <li class="badge cat-sup"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></span>Zabbix</li>
+                <li class="badge cat-sup"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/> <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/> <circle cx="12" cy="12" r="2"/> <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/> <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></span>IoT LoRaWAN</li>
+              </ul>
+            </div>
+          </div>
+          <div class="marquee-row" data-direction="right" data-speed="32">
+            <div class="marquee-track">
+              <ul class="marquee-group">
+                <!-- Systèmes et virtualisation -->
+                <li class="badge cat-sys"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/> <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/> <line x1="6" x2="6.01" y1="6" y2="6"/> <line x1="6" x2="6.01" y1="18" y2="18"/></svg></span>Windows Server</li>
+                <li class="badge cat-sys"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/> <line x1="12" x2="20" y1="19" y2="19"/></svg></span>Linux</li>
+                <li class="badge cat-sys"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/> <path d="m9 12 2 2 4-4"/></svg></span>Active Directory</li>
+                <li class="badge cat-sys"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/> <path d="M4.5 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-.5"/> <path d="M4.5 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-.5"/> <path d="M6 6h.01"/> <path d="M6 18h.01"/> <path d="m15.7 13.4-.9-.3"/> <path d="m9.2 10.9-.9-.3"/> <path d="m10.6 15.7.3-.9"/> <path d="m13.6 15.7-.4-1"/> <path d="m10.8 9.3-.4-1"/> <path d="m8.3 13.6 1-.4"/> <path d="m14.7 10.8 1-.4"/> <path d="m13.4 8.3-.3.9"/></svg></span>Proxmox</li>
+                <li class="badge cat-sys"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/> <path d="m3.3 7 8.7 5 8.7-5"/> <path d="M12 22V12"/></svg></span>VMware</li>
+                <li class="badge cat-sys"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7.7c0-.6-.4-1.2-.8-1.5l-6.3-3.9a1.72 1.72 0 0 0-1.7 0l-10.3 6c-.5.2-.9.8-.9 1.4v6.6c0 .5.4 1.2.8 1.5l6.3 3.9a1.72 1.72 0 0 0 1.7 0l10.3-6c.5-.3.9-1 .9-1.5Z"/> <path d="M10 21.9V14L2.1 9.1"/> <path d="m10 14 11.9-6.9"/> <path d="M14 19.8v-8.1"/> <path d="M18 17.5V9.4"/></svg></span>Docker</li>
+                <!-- Gestion de projet -->
+                <li class="badge cat-proj"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/> <path d="M16 2v4"/> <path d="M3 10h18"/> <path d="M8 2v4"/> <path d="M17 14h-6"/> <path d="M13 18H7"/> <path d="M7 14h.01"/> <path d="M17 18h.01"/></svg></span>Planification</li>
+                <li class="badge cat-proj"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <path d="M22 21v-2a4 4 0 0 0-3-3.87"/> <path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Coordination</li>
+                <li class="badge cat-proj"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/> <path d="M12 11h4"/> <path d="M12 16h4"/> <path d="M8 11h.01"/> <path d="M8 16h.01"/></svg></span>Études de modernisation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="marquee-row" data-direction="left" data-speed="42">
+            <div class="marquee-track">
+              <ul class="marquee-group">
+                <!-- Cloud et sauvegarde -->
+                <li class="badge cat-cloud"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="17" r="3"/> <path d="M4.2 15.1A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2"/> <path d="m15.7 18.4-.9-.3"/> <path d="m9.2 15.9-.9-.3"/> <path d="m10.6 20.7.3-.9"/> <path d="m13.1 14.2.3-.9"/> <path d="m13.6 20.7-.4-1"/> <path d="m10.8 14.3-.4-1"/> <path d="m8.3 18.6 1-.4"/> <path d="m14.7 15.8 1-.4"/></svg></span>OpenStack</li>
+                <li class="badge cat-cloud"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/> <path d="M3 12a9 3 0 0 0 5 2.69"/> <path d="M21 9.3V5"/> <path d="M3 5v14a9 3 0 0 0 6.47 2.88"/> <path d="M12 12v4h4"/> <path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16"/></svg></span>Veeam</li>
+                <li class="badge cat-cloud"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="2" y1="12" y2="12"/> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/> <line x1="6" x2="6.01" y1="16" y2="16"/> <line x1="10" x2="10.01" y1="16" y2="16"/></svg></span>Stratégies de sauvegarde</li>
+                <!-- Parc et mobilité -->
+                <li class="badge cat-parc"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/> <path d="m4.93 4.93 4.24 4.24"/> <path d="m14.83 9.17 4.24-4.24"/> <path d="m14.83 14.83 4.24 4.24"/> <path d="m9.17 14.83-4.24 4.24"/> <circle cx="12" cy="12" r="4"/></svg></span>Support N1 / N2</li>
+                <li class="badge cat-parc"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>MCO multisites</li>
+                <li class="badge cat-parc"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 10 2 2 4-4"/> <rect width="20" height="14" x="2" y="3" rx="2"/> <path d="M12 17v4"/> <path d="M8 21h8"/></svg></span>Migration Windows 11</li>
+                <li class="badge cat-parc"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/> <path d="M12 18h.01"/></svg></span>Android</li>
+                <li class="badge cat-parc"><span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="10" height="14" x="3" y="8" rx="2"/> <path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4"/> <path d="M8 18h.01"/></svg></span>SOTI MobiControl</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee-footer">
+          <button class="marquee-control" type="button" aria-pressed="false" aria-label="Mettre en pause le défilement" hidden>
+            <span class="icon-pause"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/> <rect x="6" y="4" width="4" height="16" rx="1"/></svg></span>
+            <span class="icon-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="section-intro">Une question ou une opportunité ? Écrivez-moi, je réponds rapidement.</p>
+        </div>
+        <a class="contact-mail" href="mailto:contact@valcloud.fr">contact@valcloud.fr</a>
+        <div class="contact-links">
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/valentin-stoll" target="_blank" rel="noopener">LinkedIn</a>
+          <!-- <a class="btn btn-ghost" href="cv.pdf" download>Télécharger mon CV</a> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> Valentin Stoll</p>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
